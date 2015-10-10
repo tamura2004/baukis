@@ -7,7 +7,7 @@ Rails.application.configure do
   config.assets.digest = true
   config.assets.js_compressor = :uglifier
   config.assets.version = '1.0'
-  config.cache_classes = false
+  config.cache_classes = true
   config.consider_all_requests_local       = false
   config.eager_load = true
   config.i18n.fallbacks = true

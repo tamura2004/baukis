@@ -1,6 +1,6 @@
 class Customer::TopController < ApplicationController
   def index
-    raise Forbidden
+    # raise Forbidden
     render action: "index"
   end
 end
