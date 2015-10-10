@@ -1,0 +1,11 @@
+- @title = "ログイン"
+
+#login-form
+  h1 = @title
+
+  = form_for @form, url: :staff_session do |f|
+    = f.label :email, "メールアドレス"
+    = f.text_field :email
+    = f.label :password, "パスワード"
+    = f.password_field :password
+    = f.submit "ログイン"
