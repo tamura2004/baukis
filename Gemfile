@@ -17,6 +17,8 @@ gem 'bcrypt'
 gem "nokogiri"
 gem "rails-i18n"
 
+gem "slim-rails"
+
 group :development, :test do
   gem 'spring'
   gem "rspec-rails"
