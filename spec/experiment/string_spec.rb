@@ -2,10 +2,11 @@ require "spec_helper"
 
 describe String do
   describe "#<<" do
-    example "文字の追加" do
+    xexample "文字の追加" do
+      pending("調査中")
       s = "ABC"
-      s << "え"
-      expect(s.size).to eq(5)
+      s << nil
+      expect(s.size).to eq(4)
     end
   end
 end

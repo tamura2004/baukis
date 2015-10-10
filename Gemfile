@@ -11,15 +11,16 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
-gem 'spring',        group: :development
 
 gem 'therubyracer', platforms: :ruby
 gem 'bcrypt'
 gem "nokogiri"
 gem "rails-i18n"
 
-group :test do
+group :development, :test do
+  gem 'spring'
   gem "rspec-rails"
+  gem "guard-rspec"
   gem "spring-commands-rspec"
   gem "capybara"
   gem "factory_girl_rails"
