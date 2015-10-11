@@ -8,4 +8,11 @@ Rails.application.configure do
   config.cache_classes = false
   config.consider_all_requests_local       = true
   config.eager_load = false
+
+  config.baukis = {
+    staff: { host: "baukis.example.com", path: "" },
+    admin: { host: "baukis.example.com", path: "admin" },
+    customer: { host: "example.com", path: "mypage" }
+  }
+
 end

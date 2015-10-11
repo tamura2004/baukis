@@ -1,1 +1,1 @@
-Spring.watch "app"
+Spring.watch "app", "spec"
