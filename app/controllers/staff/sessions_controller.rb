@@ -1,4 +1,5 @@
 class Staff::SessionsController < Staff::Base
+  skip_before_action :authorize
 
   def new
     if current_staff_member
@@ -19,6 +20,7 @@ class Staff::SessionsController < Staff::Base
     if Staff::Authenticator.new(staff_member).authenticate(@form.password)
       if !staff_member.suspended?
         session[:staff_member_id] = staff_member.id
+        session[:last_access_time] = Time.current
         flash.notice = "ログインしました。"
         redirect_to :staff_root
       else
