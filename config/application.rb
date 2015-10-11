@@ -15,7 +15,6 @@ Bundler.require(*Rails.groups)
 
 module Baukis
   class Application < Rails::Application
-    config.action_controller.permit_all_parameters = true
     config.time_zone = 'Tokyo'
     config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
     config.i18n.default_locale = :ja
