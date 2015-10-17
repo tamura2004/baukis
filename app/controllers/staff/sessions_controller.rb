@@ -21,9 +21,11 @@ class Staff::SessionsController < Staff::Base
       if !staff_member.suspended?
         session[:staff_member_id] = staff_member.id
         session[:last_access_time] = Time.current
+        staff_member.events.create!(type: "logged_in")
         flash.notice = "ログインしました。"
         redirect_to :staff_root
       else
+        staff_member.events.create!(type: "rejected")
         flash.now.alert = "アカウントが停止されています"
         render action: "new"
       end
@@ -34,6 +36,9 @@ class Staff::SessionsController < Staff::Base
   end
 
   def destroy
+    if current_staff_member
+      current_staff_member.events.create!(type: "logged_out")
+    end
     session.delete(:staff_member_id)
     flash.notice = "ログアウトしました。"
     redirect_to :staff_root

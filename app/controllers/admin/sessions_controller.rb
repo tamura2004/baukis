@@ -17,6 +17,7 @@ class Admin::SessionsController < Admin::Base
 
     if authenticator.authenticate!
       session[:administrator_id] = administrator.id
+      session[:last_access_time] = Time.current
       flash.notice = authenticator.message
       redirect_to :admin_root
 

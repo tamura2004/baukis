@@ -4,7 +4,8 @@ class Admin::StaffMembersController < Admin::Base
     unless current_administrator
       redirect_to :admin_login and return
     end
-    @staff_members = StaffMember.order(:family_name_kana, :given_name_kana)
+    @staff_members =
+      StaffMember.order(:family_name_kana, :given_name_kana).page(params[:page])
   end
 
   def show

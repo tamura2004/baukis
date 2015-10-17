@@ -18,6 +18,9 @@ gem "nokogiri"
 gem "rails-i18n"
 
 gem "slim-rails"
+gem "foreigner"
+gem "kaminari"
+gem "quiet_assets"
 
 group :development, :test do
   gem 'spring'
