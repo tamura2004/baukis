@@ -21,6 +21,8 @@ gem "slim-rails"
 gem "foreigner"
 gem "kaminari"
 gem "quiet_assets"
+gem "date_validator"
+gem "email_validator"
 
 group :development, :test do
   gem 'spring'
