@@ -68,8 +68,6 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffi (1.9.10)
-    foreigner (1.7.4)
-      activerecord (>= 3.0.0)
     formatador (0.2.5)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
@@ -246,7 +244,6 @@ DEPENDENCIES
   date_validator
   email_validator
   factory_girl_rails
-  foreigner
   guard-rspec
   jbuilder
   jquery-rails

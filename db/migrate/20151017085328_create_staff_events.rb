@@ -8,6 +8,5 @@ class CreateStaffEvents < ActiveRecord::Migration
 
     add_index :staff_events, :created_at
     add_index :staff_events, [:staff_member_id, :created_at ]
-    add_foreign_key :staff_events, :staff_members
   end
 end
