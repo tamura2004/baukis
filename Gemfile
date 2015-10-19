@@ -22,8 +22,10 @@ gem "kaminari"
 gem "quiet_assets"
 gem "date_validator"
 gem "email_validator"
+gem "jquery-ui-rails"
 
 group :development, :test do
+  gem "pry-rails"
   gem 'spring'
   gem "rspec-rails"
   gem "guard-rspec"
