@@ -3,7 +3,7 @@ class FormPresenter
 
   attr_reader :form_builder, :view_context
   delegate :label, :text_field, :password_field, :check_box, :radio_button,
-    :text_area, :object, to: :form_builder
+  :text_area, :object, to: :form_builder
 
   def initialize(form_builder, view_context)
     @form_builder = form_builder
@@ -43,6 +43,14 @@ class FormPresenter
         options[:class] = "datepicker"
       end
       m << text_field(name, options)
+      m << error_messages_for(name)
+    end
+  end
+
+  def drop_down_list_block(name, label_text, choices, options = {})
+    markup(:div, class: 'input-block') do |m|
+      m << decorated_label(name, label_text, options)
+      m << form_builder.select(name, choices, { include_blank: true }, options)
       m << error_messages_for(name)
     end
   end
